@@ -1,0 +1,5 @@
+select staff.*, sum(score) as `tong diem` from staff
+    join exam_result er on staff.id = er.staff_id
+    where exam_date = '2021-09-13' and dev = "Dev2"
+    group by staff_id
+    order by `tong diem` desc
